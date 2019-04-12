@@ -1,0 +1,30 @@
+plugins {
+    id "java"
+    id "idea"
+}
+
+version = "0.1.0"
+group = "com.github.ustc_zzzz"
+archivesBaseName = "OfflineServerUsernameWebRequestNetworkManager"
+
+sourceCompatibility = "1.8"
+
+defaultTasks "clean", "build"
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "sponge"
+        url = "https://repo.spongepowered.org/maven"
+    }
+}
+
+dependencies {
+    compile "org.spongepowered:spongeapi:7.1.0"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    options.compilerArgs << "-Xlint:all"
+}
+
